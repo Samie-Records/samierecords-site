@@ -1256,6 +1256,15 @@ hr {
   padding: 0 20px;
 }
 
+.product-showcase .title {
+  /* Adjust this value to shrink the gap (1.1 to 1.2 is usually tight and clean) */
+  line-height: 1.2;
+
+  /* Ensure there isn't extra padding at the top/bottom adding to the illusion of a gap */
+  margin-bottom: 10px;
+  padding: 0;
+  padding-bottom: 15px;
+}
 .beat-layout {
   display: flex;
   justify-content: flex-start; /* Aligns items to the left */
@@ -1282,7 +1291,7 @@ hr {
   box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* cursor: pointer; */
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .unique-product-card:hover {
@@ -1380,5 +1389,12 @@ hr {
   }
   .unique-product-card {
     padding: 30px;
+  }
+}
+
+/* Hide the scroll top button on screens smaller than 768px */
+@media (max-width: 768px) {
+  #scrollTopBtn {
+    display: none !important;
   }
 }

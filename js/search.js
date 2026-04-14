@@ -3,9 +3,9 @@
 const productDatabase = [
     // { title: "AfroBeats Packs - Guitar Loop Packs", img: "Pictures/p1.png" },
     // { title: "Afro Essentials - Drum Loops", img: "Pictures/p2.png" },
-    { title: "AfroBeats Packs - Ultimate Bundle Vol 1", img: "Pictures/p3.png" },
-    { title: "Afro Essentials - Vocals Bundle", img: "Pictures/p4.png" },
-    { title: "Afro Essentials - Sample Packs", img: "Pictures/p5.png" },
+    { title: "AfroBeats Packs - Ultimate Bundle Vol 1", img: "Pictures/p3.jpg" },
+    { title: "Afro Essentials - Vocals Bundle", img: "Pictures/p4.jpg" },
+    { title: "Afro Essentials - Sample Packs", img: "Pictures/p5.jpg" },
     { title: "Blue Hour", img: "Pictures/Albulm-Cover1.jpg" },
 ];
 
