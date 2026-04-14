@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | My Store</title>
+  </head>
+  <!-- Cart CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/product-page.css" />
+  <link rel="stylesheet" href="css/search-results.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <body>
+    <!-- HEADER (reuse your existing header later if you want) -->
+    <!-- navebar -->
+    <div class="min-container-navbar">
+      <div class="navbar">
+        <!-- Logo -->
+        <a href="index.html">
+          <img
+            class="logo-icon"
+            src="logo/Samie Logo-color.png"
+            width="200px" />
+        </a>
+
+        <!-- Search -->
+        <div class="search-box">
+          <input
+            id="mainSearchInput"
+            type="text"
+            placeholder="Search for loops, kits, vocal chops, or full beats..."
+            autocomplete="off" />
+          <div id="searchSuggestions" class="suggestions-dropdown"></div>
+        </div>
+        <ion-icon
+          id="searchIconBtn"
+          class="search-icon"
+          name="search-outline"
+          style="cursor: pointer"></ion-icon>
+
+        <!-- Account -->
+        <!-- <div class="drop-menu" id="accountToggle">
+            <ion-icon name="person-outline"></ion-icon>
+            <p id="accountName">Account</p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </div>
+
+          <div class="account-dropdown hidden" id="accountDropdown"></div> -->
+
+        <!-- Right side -->
+        <div class="nav-right">
+          <!-- Cart -->
+          <a href="cart.html" class="cart">
+            <ion-icon name="cart-outline" style="font-size: 23px"></ion-icon>
+            <span class="cart-count">0</span>
+            <p>Cart</p>
+          </a>
+
+          <!-- Login Modal -->
+          <!-- <div id="loginModal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeLogin()">&times;</span>
+
+                <h2>Please Your Details</h2>
+                <p class="subtitle">Click continue to Sign in or Sign up!</p>
+
+                 <div class="divider">
+                  <span>only</span>
+                </div>
+
+                <label>Email address</label>
+                <input
+                  type="email"
+                  id="emailInput"
+                  placeholder="Enter your email address" />
+
+                 <button onclick="Clerk.openSignIn()" class="continue-btn">
+                  Continue ▶
+                </button> 
+              </div>
+            </div> -->
+        </div>
+
+        <!-- Mobile menu icon -->
+        <!-- <img
+              src="images/menu.png"
+              class="menu-icon"
+              onclick="menutoggle()" />
+          </div> -->
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="container-cart">
+      <!-- LEFT: CART ITEMS -->
+      <div class="cart-left">
+        <section class="cart-items">
+          <!-- Products will load here dynamically -->
+        </section>
+      </div>
+
+      <!-- RIGHT: CART SUMMARY -->
+      <aside class="cart-summary">
+        <h3>CART SUMMARY</h3>
+        <hr />
+        <div class="summary-row">
+          <span id="itemsTotal">Items total (3)</span>
+          <span id="itemsPrice">₦ 67,187</span>
+        </div>
+        <hr />
+        <div class="summary-row">
+          <strong>Subtotal</strong>
+          <strong id="subtotal">₦ 67,187</strong>
+        </div>
+        <!-- <hr />
+        <input
+          type="email"
+          id="emailInput"
+          placeholder="Enter email to receive download links"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #33b27b;
+            border-radius: 5px;
+          " /> -->
+        <hr />
+        <a href="#"
+          ><button class="checkout">
+            Checkout (<span id="checkoutTotal">₦ 67,187</span>)
+          </button></a
+        >
+      </aside>
+    </main>
+
+    <!-- RECENTLY VIEWED -->
+    <!-- <section class="recent">
+      <h2 class="recent-title">Recently Viewed</h2>
+      <div class="recent-grid" id="recentGrid"></div>
+    </section> -->
+    <!-- footer -->
+
+    <div class="continue-shop">
+      <a href="index.html">← Go back & continue shopping</a>
+    </div>
+
+    <!-- script here -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Add Clerk Script -->
+    <!-- <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c21hc2hpbmctaGFsaWJ1dC04LmNsZXJrLmFjY291bnRzLmRldiQ"
+      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"></script> -->
+
+    <script src="js/dropdown.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/modal.js"></script>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Product added successful ✅</div>
+    <script src="js/search.js"></script>
+  </body>
+</html>

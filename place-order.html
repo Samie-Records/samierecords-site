@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place Your Order</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/place-order.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+
+    <!-- Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <!-- Header ehre -->
+    <header>
+      <a href="index.html">
+        <div class="logo">
+          <img src="logo/Samie Logo-color.png" width="150px" />
+        </div>
+      </a>
+      <h1>Place Your Order</h1>
+      <nav>
+        <div class="call-outline">
+          <ion-icon name="call"></ion-icon>
+          <div>
+            <p>Need Help?</p>
+            <a href="#"><p class="contact-us">Contact us</p></a>
+          </div>
+        </div>
+
+        <div class="call-outline">
+          <ion-icon name="checkmark-circle"></ion-icon>
+          <div>
+            <p>Easy</p>
+            <p>Returns</p>
+          </div>
+        </div>
+
+        <div class="call-outline">
+          <ion-icon name="construct"></ion-icon>
+          <div>
+            <p>Secure</p>
+            <p>Payments</p>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <!-- Left Side -->
+      <section class="checkout-details">
+        <!-- Address -->
+        <!-- <section class="card-address"> -->
+        <!-- <div class="cart-address-title">
+            <h3>
+              <ion-icon name="checkmark-circle"></ion-icon>1. CUSTOMER ADDRESS
+            </h3>
+            <div class="change-arrow">
+              <a href="checkout-address.html">Change</a>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </div>
+          </div> -->
+        <!-- <hr /> -->
+        <!-- <p class="title"><strong></strong></p> -->
+        <!-- <p>
+            <strong></strong>2a Isiaka Salau Street So Easy Ayobo, Lagos State.
+            | Lagos -Iyana Ipaja (Ayobo Road) | +234 8102839713
+          </p> -->
+        <!-- </section> -->
+
+        <!-- Delivery -->
+        <section class="card-delivery">
+          <div class="card-delivery-title">
+            <h3>
+              <ion-icon name="checkmark-circle"></ion-icon>PRODUCT DETAILS
+            </h3>
+            <!-- <div class="change-arrow">
+              <a class="change" href="#">Change</a>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </div> -->
+          </div>
+          <hr class="hr-card-delivery" />
+
+          <!-- <div class="delivery-option">
+            <p><strong>Door Delivery</strong></p>
+            <p>Delivery between 04 March and 05 March</p>
+          </div> -->
+
+          <!-- save upto ₦840 -->
+          <!-- <div class="switch-location">
+            <p class="switch-location-save">SAVE UP TO ₦840</p>
+            <p>
+              <strong class="switch-location-option"
+                >Switch to a pickup sation...</strong
+              >
+            </p>
+            <p>We’ll let you know as soon as we launch</p>
+          </div> -->
+
+          <!-- Shipment -->
+          <!-- <div class="shipment">
+            <p>Shipment 1/1</p>
+            Fulfilled by James
+          </div> -->
+          <!-- Product -->
+          <div class="door-delivery-container">
+            <div class="product-container">
+              <!-- <p><strong>Door Delivery</strong></p> -->
+              <!-- <p>Delivery between 04 March and 05 March.</p> -->
+
+              <div class="product">
+                <!-- <img src="images/product-Oraimo Smart Watch.png" /> -->
+                <div>
+                  <!-- <p>2026 GPS Smart watch</p>
+                  <p>₦52,198</p>
+                  <p>Qty: 1</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="cart.html"
+            ><button class="modify-cart">Modify Cart</button></a
+          >
+        </section>
+
+        <!-- Payment -->
+      </section>
+
+      <!-- Right Side -->
+      <div class="right-side">
+        <aside class="order-summary">
+          <h3>Order Summary</h3>
+          <hr />
+
+          <div class="items-total">
+            <p>Items total: (<span id="summary-qty">0</span>)</p>
+            <p>₦<span id="summary-subtotal">0</span></p>
+          </div>
+
+          <!-- <div class="items-total">
+            <p>Delivery fees:</p>
+            <p>₦<span id="summary-delivery">2,000</span></p>
+          </div> -->
+
+          <hr />
+
+          <p>
+            <strong>Total: ₦<span id="summary-total">0</span></strong>
+          </p>
+
+          <input type="text" placeholder="Enter voucher code" />
+          <button id="apply-voucher">Apply</button>
+
+          <button class="confirm" id="confirm-order-btn">Confirm Order</button>
+        </aside>
+
+        <div class="terms">
+          <p>By proceeding, you are automatically accepting the</p>
+          <a href="terms&conditions.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <a href="index.html">← Go back & continue shopping</a>
+    </footer>
+    <!-- script here -->
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
+    <script src="js/place-order.js"></script>
+  </body>
+</html>

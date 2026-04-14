@@ -1,0 +1,13 @@
+.sidebar ul li.active {
+  background: #f2f2f2;
+  border-left: 4px solid #ff9900;
+}
+
+.sidebar ul li.active a {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.sidebar ul li.active ion-icon {
+  color: #ff9900;
+}

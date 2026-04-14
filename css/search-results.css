@@ -1,0 +1,60 @@
+/* styling the search bar dropdown when typing */
+#searchSuggestions.suggestions-dropdown {
+  /* 1. Positioning and Spacing */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 71%;
+  margin-left: 270px;
+  cursor: pointer;
+
+  /* 2. Alignment */
+  display: none; /* Controlled by JS */
+  flex-direction: column;
+  align-items: flex-start; /* Forces content to the left */
+  text-align: left; /* Ensures text starts at the left */
+
+  /* 3. Visuals */
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  overflow: hidden; /* Keeps corners rounded */
+}
+
+/* Container for the image and text */
+.suggestion-item {
+  width: 100%; /* Makes the hover effect span the full width */
+  display: flex;
+  justify-content: flex-start; /* Content to the left */
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* Fix the image sizing inside the dropdown */
+.suggestion-item img {
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  object-fit: contain; /* Prevents stretching */
+  margin-right: 15px; /* Space between image and text */
+  border-radius: 4px;
+  background: #fdfdfd; /* Light background for transparent PNGs */
+  flex-shrink: 0; /* Prevents the image from getting squashed */
+}
+
+/* Style the product text next to the image */
+.suggestion-text {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds ... if the name is too long */
+}

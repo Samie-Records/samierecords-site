@@ -1,0 +1,43 @@
+.content {
+  padding: 20px;
+  flex: 1;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.review-card img {
+  width: 80px;
+  height: auto;
+}
+
+.review-info {
+  flex: 1;
+}
+
+.review-info h4 {
+  margin: 0 0 6px;
+}
+
+.delivered {
+  color: green;
+  font-size: 14px;
+}
+
+.rate-btn {
+  color: #f68b1e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.content h2 {
+  padding-bottom: 20px;
+}

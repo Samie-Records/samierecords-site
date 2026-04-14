@@ -1,0 +1,150 @@
+.sidebar {
+  width: 320px;
+  background: #fff;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  margin-right: 12px;
+  margin-top: 75px;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px;
+  margin: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 12px;
+  cursor: pointer;
+  color: #555;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+.sidebar h3:hover {
+  background: #f0f0f0;
+}
+
+.sidebar ul li ion-icon {
+  padding-right: 15px;
+  font-size: 18px;
+}
+
+.sidebar h3 ion-icon {
+  font-size: 18px;
+  padding-right: 15px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.sidebar li.active a {
+  font-weight: bold;
+}
+
+hr {
+  color: rgb(242, 242, 242);
+  margin-top: 20px;
+}
+
+.account-management p {
+  color: #555;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.account-management a {
+  color: #555;
+  font-size: 16px;
+  padding: 12px;
+}
+
+.account-management p:hover {
+  font-weight: bold;
+  background: #f0f0f0;
+  padding: 12px;
+}
+
+.account-management a:hover {
+  font-weight: bold;
+  background: #f0f0f0;
+  padding: 12px;
+}
+
+.sidebar li.active {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+.hr-top {
+  margin: 0;
+}
+
+/* Logout button standout */
+.account-management .logout {
+  display: block;
+  background: linear-gradient(135deg, #ff6600, #ff9933);
+  color: #fff; /* default white text */
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  margin: 20px 0 0 0; /* spacing from other links */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+}
+
+/* Hover effect */
+.account-management .logout:hover {
+  background: linear-gradient(135deg, #ff8533, #ffb366); /* lighter gradient */
+  color: #000; /* text turns black on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sidebar li {
+    flex: 1 1 45%;
+    text-align: center;
+  }
+
+  .sidebar li a {
+    justify-content: center;
+  }
+
+  .account-management {
+    display: none; /* hide extra links on mobile */
+  }
+}

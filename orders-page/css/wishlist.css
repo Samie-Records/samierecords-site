@@ -1,0 +1,81 @@
+/* Main content */
+.content {
+  flex: 1;
+  padding: 30px 40px;
+  background: #fff;
+  min-height: 100vh;
+  margin-top: 75px;
+}
+
+/* Page title */
+.page-title {
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Body container */
+.wishlist-body {
+  min-height: 400px;
+
+  /* center everything */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Empty state */
+.wishlist-empty {
+  display: none;
+  text-align: center;
+  max-width: 420px;
+}
+
+.wishlist-empty.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wishlist icon container */
+.wishlist-icon {
+  margin-bottom: 15px;
+}
+
+/* Icon styling */
+.wishlist-icon ion-icon {
+  font-size: 64px;
+  color: #f68b1e;
+}
+
+/* Title */
+.wishlist-empty h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Description */
+.wishlist-empty p {
+  color: #777;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* Button */
+.btn-primary {
+  background: #f68b1e;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #e07d16;
+}

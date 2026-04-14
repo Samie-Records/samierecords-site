@@ -1,0 +1,92 @@
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  margin-top: 75px;
+}
+
+.content h1 {
+  font-size: 18px;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab.active {
+  border-bottom: 3px solid orange;
+  color: orange;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.order-card img {
+  width: 80px;
+  margin-right: 20px;
+}
+
+.order-info {
+  flex: 1;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
+.badge.delivered {
+  background: #28a745;
+  color: #fff;
+}
+
+.details {
+  color: orange;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* @media (max-width: 768px) {
+  .order-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .order-card img {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .details {
+    align-self: flex-end;
+  }
+
+  .tabs {
+    overflow-x: auto;
+  }
+} */

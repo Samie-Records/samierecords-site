@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results page</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/search-results.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/scrollTopBtn.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <!-- Add Clerk Script -->
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c21hc2hpbmctaGFsaWJ1dC04LmNsZXJrLmFjY291bnRzLmRldiQ"
+      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- navebar -->
+      <div class="min-container-navbar">
+        <div class="navbar">
+          <!-- Logo -->
+          <a href="index.html">
+            <img
+              class="logo-icon"
+              src="logo/Samie Logo-color.png"
+              width="200px" />
+          </a>
+
+          <!-- Search -->
+          <div class="search-box">
+            <input
+              id="mainSearchInput"
+              type="text"
+              placeholder="Search for loops, kits, vocal chops, or full beats..."
+              autocomplete="off" />
+            <div id="searchSuggestions" class="suggestions-dropdown"></div>
+          </div>
+          <ion-icon
+            id="searchIconBtn"
+            class="search-icon"
+            name="search-outline"
+            style="cursor: pointer"></ion-icon>
+
+          <!-- Account -->
+          <!-- <div class="drop-menu" id="accountToggle">
+            <ion-icon name="person-outline"></ion-icon>
+            <p id="accountName">Account</p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </div>
+
+          <div class="account-dropdown hidden" id="accountDropdown"></div> -->
+
+          <!-- Right side -->
+          <div class="nav-right">
+            <!-- Cart -->
+            <a href="cart.html" class="cart">
+              <ion-icon name="cart-outline" style="font-size: 23px"></ion-icon>
+              <span class="cart-count">0</span>
+              <p>Cart</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Best-Seller Collection-->
+    <div class="small-container">
+      <h2 class="title">The Best-Seller Collection</h2>
+      <div class="row">
+        <!-- <div class="col-4">
+          <img
+            src="Pictures/p1.jpg"
+            class="product-link"
+            style="cursor: pointer"
+            data-id="Guitar-loops"
+            data-name="AfroBeats Packs - Guitar Loop Packs"
+            data-price="20000"
+            data-image="Pictures/p1.jpg" />
+
+          <h4>AfroBeats Packs</h4>
+          <p>Guitar Loop Packs</p>
+
+          <div class="rating">
+            <img src="stars/Stars-2.png" />
+          </div>
+
+          <div class="cost">
+            <p>&#8358;20,000</p>
+            <p>$ 14.99</p>
+          </div>
+
+          <a
+            href="#"
+            class="add-to-cart"
+            data-id="Guitar-loops"
+            data-name="AfroBeats Packs - Guitar Loop Packs"
+            data-price="20000"
+            data-image="Pictures/p1.png">
+            Add to Cart
+          </a>
+        </div> -->
+
+        <!-- <div class="col-4">
+          <img
+            src="Pictures/p2.jpg"
+            class="product-link"
+            data-id="Drum-loops"
+            data-name="Afro Essentials - Drum Loops"
+            data-price="20000"
+            data-image="Pictures/p2.jpg"
+            style="cursor: pointer" />
+
+          <h4>Afro Essentials</h4>
+          <p>Drum Loops</p>
+          <div class="rating">
+            <img src="stars/Stars-3.png" />
+          </div>
+          <div class="cost">
+            <p>&#8358;20,000</p>
+            <p>$ 14.99</p>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-id="Drum-loops"
+            data-name="Afro Essentials - Drum Loops"
+            data-price="20000"
+            data-image="Pictures/p2.png">
+            Add to Cart
+          </a>
+        </div> -->
+
+        <div class="col-4">
+          <img
+            src="Pictures/p3.jpg"
+            class="product-link"
+            data-id="afrobeats-packs---ultimate-bundles-vol-1-temuen"
+            data-name="AfroBeats Packs - Ultimate Bundle Vol 1"
+            data-price="34000"
+            data-image="Pictures/p3.jpg"
+            style="cursor: pointer" />
+
+          <h4>AfroBeats Packs</h4>
+          <p>Ultimate Bundle Vol 1</p>
+          <div class="rating">
+            <img src="stars/Stars-3.png" />
+          </div>
+          <div class="cost">
+            <p>&#8358;34,000</p>
+            <p>$ 24.99</p>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-id="afrobeats-packs---ultimate-bundles-vol-1-temuen"
+            data-name="AfroBeats Packs - Ultimate Bundle Vol 1"
+            data-price="34000"
+            data-image="Pictures/p3.png">
+            Add to Cart
+          </a>
+        </div>
+
+        <div class="col-4">
+          <img
+            src="Pictures/p4.jpg"
+            class="product-link"
+            data-id="afro-essentials---vocals-bundle-trxevn"
+            data-name="Afro Essentials - Vocals Bundle"
+            data-price="12000"
+            data-image="Pictures/p4.jpg"
+            style="cursor: pointer" />
+
+          <h4>Afro Essentials</h4>
+          <p>Vocals Bundle</p>
+          <div class="rating">
+            <img src="stars/Stars-3.png" />
+          </div>
+          <div class="cost">
+            <p>&#8358;12,000</p>
+            <p>$ 8.99</p>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-id="afro-essentials---vocals-bundle-trxevn"
+            data-name="Afro Essentials - Vocals Bundle"
+            data-price="12000"
+            data-image="Pictures/p4.png">
+            Add to Cart
+          </a>
+        </div>
+
+        <div class="col-4">
+          <img
+            src="Pictures/p5.jpg"
+            class="product-link"
+            data-id="afro-essentials---sample-packs-hicwno"
+            data-name="Afro Essentials - Sample Packs"
+            data-price="18000"
+            data-image="Pictures/p5.jpg"
+            style="cursor: pointer" />
+
+          <h4>Afro Essentials</h4>
+          <p>Sample Packs</p>
+          <div class="rating">
+            <img src="stars/Stars-3.png" />
+          </div>
+          <div class="cost">
+            <p>&#8358;18,000</p>
+            <p>$ 13.99</p>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-id="afro-essentials---sample-packs-hicwno"
+            data-name="Afro Essentials - Sample Packs"
+            data-price="18000"
+            data-image="Pictures/p5.png">
+            Add to Cart
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Instant Download Beats for Artists-->
+    <div class="product-showcase">
+      <h2 class="title">Instant Download Beats for Artists</h2>
+
+      <div class="beat-layout">
+        <div class="unique-product-card">
+          <div class="product-info-side">
+            <img
+              src="Pictures/Albulm-Cover1.jpg"
+              class="product-link"
+              data-id="blue-hour-dmycyy"
+              data-name="Blue Hour"
+              data-price="50000"
+              data-image="Pictures/Albulm-Cover1.jpg"
+              style="cursor: pointer" />
+
+            <h4>Blue Hour</h4>
+            <!-- <p>Guitar Loops</p> -->
+
+            <!-- <div class="rating1">
+              <img src="stars/Stars-2.png" />
+            </div> -->
+
+            <div class="cost-beat">
+              <p>&#8358;50,000</p>
+              <p>$ 36.99</p>
+            </div>
+            <a
+              href="#"
+              class="add-to-cart"
+              data-id="blue-hour-dmycyy"
+              data-name="Blue Hour"
+              data-price="50000"
+              data-image="Pictures/Albulm-Cover1.jpg">
+              Add to Cart
+            </a>
+          </div>
+
+          <div class="video-preview-side">
+            <div class="centering-wrapper">
+              <p class="photo-caption">
+                Kindly preview the beat before you purchase.
+              </p>
+
+              <div class="video-frame-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/GrmI5OnmKb0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <p>
+                Dive into a soulful blend of vintage textures and modern groove.
+                This track features a dusty, sampled drum break with a punchy,
+                muffled kick that provides a solid foundation without
+                overpowering the mix. A warm, filtered electric piano lays down
+                jazzy, extended chords, while a melodic acoustic guitar
+                riff—complete with organic slides and vibrato—adds a human touch
+                that breathes life into the sequence.
+              </p>
+              <p>Technical Specifications:</p>
+              <p>Key: C-Minor</p>
+              <p>BPM: 85</p>
+              <p>High-Quality WAV (24-bit / 44.100 kHz)</p>
+              <p>
+                Instrumentation: Electric Piano (Tremolo), Acoustic Guitar,
+                Sub-Synth Bass, Vinyl Textures.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
+
+    <!-- whatsapp -->
+    <div class="whatsapp-icon">
+      <a
+        href="https://wa.me/2348102839713?text=Hi%20Samie%20Records!%20I'm%20interested%20in%20the%20Ultimate%20Bundle%20Vol%201."
+        target="_blank"
+        rel="noopener noreferrer">
+        <img
+          src="logo/whatsapp.png"
+          alt="Chat with us on WhatsApp"
+          style="width: 60px; height: auto; border: none" />
+      </a>
+      <p>Chat with us</p>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col-logo-col">
+          <img
+            src="logo/Samie Records Logo - icon.png"
+            width="60px"
+            alt="logo"
+            class="footer-logo" />
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <!-- <li><a href="#">Join Affiliate</a></li> -->
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <div class="contact-item">
+            <div><ion-icon name="mail"></ion-icon></div>
+            <div>supportsamierecords@gmail.com</div>
+          </div>
+
+          <div class="contact-item">
+            <div><ion-icon name="call"></ion-icon></div>
+            <div>+234 8102839713</div>
+          </div>
+
+          <!-- <div class="contact-item">
+            <div><ion-icon name="location"></ion-icon></div>
+            <div>Office 2-4 Custom Street Lagos, Nigeria</div>
+          </div> -->
+        </div>
+
+        <div class="footer-col right-align">
+          <div class="stay">
+            <h4>Stay in touch</h4>
+            <div class="social-icons">
+              <a
+                href="https://www.linkedin.com/in/kolawole-adewalure-2a0723334/"
+                target="_blank"
+                class="icon">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+
+              <a
+                href="https://www.youtube.com/@samierecords?sub_confirmation=1"
+                target="_blank"
+                class="icon">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+
+              <!-- <a
+                href="https://www.youtube.com/@samierecords?sub_confirmation=1"
+                target="_blank"
+                class="icon">
+                <ion-icon name="logo-xing"></ion-icon>
+              </a> -->
+
+              <a
+                href="https://www.instagram.com/samierecords/"
+                target="_blank"
+                class="icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="copy-term">
+        <p class="copyright">©2026 Samie Records</p>
+        <div class="legal-links">
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- script here -->
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="js/dropdown.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/product-page.js"></script>
+    <script src="js/scrollTopBtn.js"></script>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Product added successful ✅</div>
+    <!-- scrollToBtn -->
+    <button id="scrollTopBtn">&#94;</button>
+
+    <!-- It captures the product details when an image is clicked. -->
+    <!-- this is design for product-page.html -->
+    <script>
+      document.querySelectorAll(".product-link").forEach((item) => {
+        item.addEventListener("click", function () {
+          // Create an object with the product data from the clicked image
+          const productData = {
+            id: this.getAttribute("data-id"),
+            name: this.getAttribute("data-name"),
+            price: this.getAttribute("data-price"),
+            image: this.getAttribute("data-image"),
+            description: this.getAttribute("data-description") || "",
+          };
+
+          // Save it to localStorage
+          localStorage.setItem("selectedProduct", JSON.stringify(productData));
+
+          // Redirect to the product page
+          window.location.href = "product-page.html";
+        });
+      });
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/search-results.js"></script>
+  </body>
+</html>

@@ -1,0 +1,411 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: rgb(245, 245, 245);
+}
+
+/* Base style for the Remove button */
+.btn-remove {
+  background: #33b27b;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+  transition: all 0.3s ease; /* Makes the hover effect smooth */
+}
+
+/* Hover effect */
+.btn-remove:hover {
+  background: rgb(255, 60, 60); /* A slightly darker green */
+  transform: scale(1.05); /* Makes the button pop out slightly */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Active state (when clicked) */
+.btn-remove:active {
+  transform: scale(0.98);
+}
+/* MAIN LAYOUT */
+.container-cart {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 100px;
+  /* width: 80%; */
+  margin: 100px auto 0 auto; /* 👈 this centers it */
+}
+
+/* CART ITEMS */
+.cart-items {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/*  */
+.cart-info h4 {
+  color: black;
+}
+
+.cart-info .item-totalprice {
+  color: black;
+}
+.cart-info .item-ids {
+  color: rgb(113, 113, 113);
+  font-weight: 400;
+}
+.cart-item .item-totalprice {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: black;
+  font-weight: 400;
+  color: #33b27b;
+}
+
+.cart-item .cart-img {
+  width: 110px;
+}
+
+.cart-info p {
+  color: #33b27b;
+}
+
+.cart-controls button {
+  background: #33b27b;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-controls button:hover {
+  background: #f6840c;
+}
+.cart-controls .delete {
+  margin-left: 10px;
+}
+
+.cart-controls .delete:hover {
+  background: rgb(255, 60, 60);
+}
+.value-count {
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 600;
+}
+/*  */
+
+.cart-items h2 {
+  text-align: left;
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  font-weight: 600;
+}
+
+.cart-item img {
+  width: 150px;
+  height: 150px;
+}
+
+.item-info {
+  flex: 1;
+}
+
+/* .title {
+  font-weight: bold;
+  text-align: left;
+} */
+.item-info p {
+  font-weight: bold;
+  text-align: left;
+}
+
+.item-info .stock {
+  padding-top: 8px;
+}
+.stock {
+  color: green;
+  font-size: 14px;
+}
+
+.remove {
+  background: none;
+  color: #33b27b #33b27b;
+  border: none;
+  cursor: pointer;
+}
+
+.item-actions {
+  text-align: right;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 40px;
+}
+
+.qty button {
+  width: 30px;
+  height: 30px;
+  background: #33b27b;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.discount-price {
+  display: flex;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.discount-price p {
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
+.discount-price button {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: #33b27b;
+  background: #fef3e9;
+}
+
+/* CART SUMMARY */
+.cart-summary {
+  background: #fff;
+  padding: 20px;
+  height: fit-content;
+  border-radius: 5px;
+}
+
+.cart-summary h3 {
+  padding-bottom: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.checkout {
+  width: 100%;
+  padding: 15px;
+  background: #33b27b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.checkout:hover {
+  background: #ff523b;
+}
+
+/* RECENT */
+.recent {
+  padding: 20px;
+  background: rgb(243, 243, 243);
+}
+
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.recent-item {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.recent-title {
+  padding-bottom: 15px;
+}
+.item-info p {
+  text-align: left;
+}
+
+hr {
+  border: none;
+  background-color: #e7e7e7;
+  height: 0.9px;
+}
+
+/* footer */
+.continue-shop {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+}
+
+.continue-shop a {
+  display: inline-block;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.continue-shop a:hover {
+  transform: scale(1.05);
+  color: #0056b3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .container-cart {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-controls .delete {
+    display: none;
+  }
+}
+
+/* Recently Viewed Section */
+.recent {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Center the grid itself */
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual product */
+.recent-item {
+  text-align: center;
+  cursor: pointer;
+  padding: 15px;
+  width: 150px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Scale animation on hover */
+.recent-item:hover {
+  transform: scale(1.08); /* increase size */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recent-item img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.recent-item p {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.recent-item span {
+  color: #33b27b;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+/*  */
+/* css/cart.css */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.item-info {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.quantity-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.delete-btn {
+  color: #e74c3c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.item-total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}

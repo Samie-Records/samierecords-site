@@ -1,0 +1,288 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0px 40px;
+  /* background: rgb(255, 16, 64); */
+  height: 72px;
+  background: white;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* justify-content: space-between; */
+}
+
+.search-box {
+  display: flex;
+  flex: 1;
+  background: #f2f2f2;
+  /* border-radius: 8px; */
+  outline: none;
+  border: none;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.search-box ::placeholder {
+  color: rgb(104, 104, 104);
+}
+.navbar .search-icon {
+  color: white;
+  padding: 12px;
+  background: #d51b1e;
+  /* border-radius: 8px; */
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 5px;
+  margin-right: 50px;
+  cursor: pointer;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-left: -8px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  color: black;
+  font-weight: 600;
+  background: none;
+  padding: 12px;
+  margin: 0;
+}
+
+.logo-icon {
+  margin-right: 30px;
+}
+/*  */
+
+/* Drop menu  */
+.drop-menu {
+  display: flex;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 25px;
+  color: rgb(255, 16, 64);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.drop-menu:hover,
+.drop-menu p:hover {
+  color: #ff693b;
+  background: white;
+}
+.drop-menu ion-icon {
+  font-size: 18px;
+}
+.drop-menu p {
+  color: rgb(255, 16, 64);
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.account-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  width: 240px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.account-dropdown.hidden {
+  display: none;
+}
+
+.account-dropdown a,
+.account-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  width: 100%;
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.account-dropdown a:hover,
+.account-dropdown button:hover {
+  background: #f5f5f5;
+  color: #6c63ff;
+}
+
+.account-dropdown .signin-btn {
+  background: #ff523b;
+  color: #fff;
+  font-weight: bold;
+  margin: 15px;
+  border-radius: 25px;
+  width: 50%;
+  font-size: 16px;
+  transition: 0.5s;
+  justify-content: center;
+}
+
+.account-dropdown .logout {
+  color: #ff6600;
+  font-weight: bold;
+  border-top: 1px solid #eee;
+}
+
+/* right section */
+
+/* Cart */
+.cart {
+  position: relative;
+  display: flex;
+  color: #d51b1e;
+}
+.cart p {
+  padding-left: 8px;
+  padding-top: 2px;
+  color: #d51b1e;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: 30px;
+  background: whi;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  background-color: #d51b1e;
+}
+
+@media only screen and (max-width: 1300px) {
+  /* .search-box {
+    display: none;
+  } */
+
+  .navbar {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .account-dropdown {
+    right: 10px;
+    width: 90%;
+  } */
+}
+
+@media (max-width: 600px) {
+  .search-box {
+    display: none;
+  }
+
+  .search-icon {
+    display: none;
+  }
+
+  /* .drop-menu {
+    font-size: 10px;
+  }
+
+  .drop-menu ion-icon {
+    font-size: 10px;
+  } */
+}
+
+@keyframes cart-bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart.animate {
+  animation: cart-bounce 0.5s ease;
+}
+
+/* Toast Styles */
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #33b27b;
+  color: #fff;
+  padding: 12px 24px;
+  /* border-radius: 8px; */
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+
+  text-align: center;
+  width: 100%;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* Optional: smaller toast on mobile */
+@media (max-width: 768px) {
+  .toast {
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart.animate {
+    animation: cart-bounce 0.35s ease; /* faster bounce for mobile */
+  }
+}
+
+/* hr */
+
+/* =========================
+   CART BOUNCE ANIMATION
+========================= */
+
+@keyframes cartBounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.25);
+  }
+  60% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart.animate {
+  animation: cartBounce 0.4s ease;
+}

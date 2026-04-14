@@ -1,0 +1,89 @@
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  margin-top: 75px;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.voucher-tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 40px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  color: #999;
+  position: relative;
+}
+
+.tab.active {
+  color: #f68b1e;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: #f68b1e;
+}
+
+/* Body */
+.voucher-body {
+  min-height: 300px;
+}
+
+/* Empty State */
+.voucher-empty {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.voucher-empty.active {
+  display: block;
+}
+
+.voucher-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.voucher-empty h4 {
+  margin-bottom: 10px;
+}
+
+.voucher-empty p {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.btn-primary {
+  background: #f68b1e;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #e07d16;
+}

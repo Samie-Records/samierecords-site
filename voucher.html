@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voucher</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="orders-page/css/main.css" />
+    <link rel="stylesheet" href="orders-page/css/sidebar.css" />
+    <link rel="stylesheet" href="orders-page/css/voucher.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="min-container-navbar">
+      <div class="navbar">
+        <a href="index.html">
+          <img
+            class="logo-icon"
+            src="logo/JLK-LOGO.png"
+            alt="JLK Logo"
+            width="45px" />
+        </a>
+
+        <div class="search-box">
+          <input
+            id="mainSearchInput"
+            type="text"
+            placeholder="Search for products, brands and categories..."
+            autocomplete="off" />
+          <div id="searchSuggestions" class="suggestions-dropdown"></div>
+        </div>
+        <ion-icon
+          id="searchIconBtn"
+          class="search-icon"
+          name="search-outline"
+          style="cursor: pointer"></ion-icon>
+
+        <div class="drop-menu" id="accountToggle">
+          <ion-icon name="person-outline"></ion-icon>
+          <p id="accountName">Account</p>
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </div>
+
+        <div class="account-dropdown hidden" id="accountDropdown"></div>
+
+        <div class="nav-right">
+          <a href="cart.html" class="cart">
+            <ion-icon name="cart-outline" style="font-size: 23px"></ion-icon>
+            <span class="cart-count">0</span>
+            <p>Cart</p>
+          </a>
+
+          <div id="loginModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeLogin()">&times;</span>
+              <h2>Please Your Details</h2>
+              <p class="subtitle">Sign in to continue!</p>
+              <div class="divider"><span>only</span></div>
+              <label>Email address</label>
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="Enter your email address" />
+              <button onclick="Clerk.openSignIn()" class="continue-btn">
+                Continue ▶
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <ul>
+          <li data-page="account.html">
+            <a href="account.html"
+              ><ion-icon name="person-outline"></ion-icon> My Account</a
+            >
+          </li>
+          <hr class="hr-top" />
+          <li data-page="orders.html">
+            <a href="orders.html"
+              ><ion-icon name="card-outline"></ion-icon> Orders</a
+            >
+          </li>
+          <li data-page="inbox.html">
+            <a href="inbox.html"
+              ><ion-icon name="mail-unread-outline"></ion-icon> Inbox</a
+            >
+          </li>
+          <li data-page="pending-review.html">
+            <a href="pending-review.html"
+              ><ion-icon name="reader-outline"></ion-icon> Pending Reviews</a
+            >
+          </li>
+          <li data-page="voucher.html">
+            <a href="voucher.html"
+              ><ion-icon name="bonfire-outline"></ion-icon> Voucher</a
+            >
+          </li>
+          <li data-page="wishlist.html">
+            <a href="wishlist.html"
+              ><ion-icon name="heart-outline"></ion-icon> Wishlist</a
+            >
+          </li>
+          <li data-page="followed-sellers.html">
+            <a href="followed-sellers.html"
+              ><ion-icon name="bicycle-outline"></ion-icon> Followed Sellers</a
+            >
+          </li>
+          <li data-page="recently-viewed.html">
+            <a href="recently-viewed.html"
+              ><ion-icon name="shield-checkmark-outline"></ion-icon> Recently
+              Viewed</a
+            >
+          </li>
+        </ul>
+
+        <hr />
+        <div class="account-management">
+          <p>Account Management</p>
+          <a href="#">Payment Settings</a>
+          <a href="#">Address Book</a>
+          <a href="#">Newsletter Preferences</a>
+          <hr />
+          <a href="#" id="logoutBtn" class="logout">Logout</a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <h2 class="page-title">Voucher</h2>
+
+        <!-- Tabs -->
+        <div class="voucher-tabs">
+          <button class="tab active" data-tab="active">ACTIVE</button>
+          <button class="tab" data-tab="inactive">INACTIVE</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="voucher-body">
+          <div class="voucher-empty active" id="active">
+            <div class="voucher-icon">🎟️</div>
+            <h4>You currently have no available Voucher</h4>
+            <p>All your available Vouchers will be displayed here</p>
+            <button class="btn-primary">Continue Shopping</button>
+          </div>
+
+          <div class="voucher-empty" id="inactive">
+            <div class="voucher-icon">🎫</div>
+            <h4>No inactive vouchers</h4>
+            <p>Your expired vouchers will appear here</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+
+    <!-- Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Clerk -->
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c21hc2hpbmctaGFsaWJ1dC04LmNsZXJrLmFjY291bnRzLmRldiQ"
+      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"></script>
+
+    <!-- Your JS Files -->
+    <script src="js/dropdown.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/pages/index.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="orders-page/js/account.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>

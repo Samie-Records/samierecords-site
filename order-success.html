@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Success</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/success.css" />
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <link rel="stylesheet" href="css/search-results.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div class="min-container-navbar">
+          <div class="navbar">
+            <a href="index.html">
+              <img
+                class="logo-icon"
+                src="logo/Samie Logo-color.png"
+                width="200px" />
+            </a>
+
+            <div class="search-box">
+              <input
+                id="mainSearchInput"
+                type="text"
+                placeholder="Search for loops, kits, or vocal chops..."
+                autocomplete="off" />
+              <div id="searchSuggestions" class="suggestions-dropdown"></div>
+            </div>
+            <ion-icon
+              id="searchIconBtn"
+              class="search-icon"
+              name="search-outline"
+              style="cursor: pointer"></ion-icon>
+
+            <div class="nav-right">
+              <a href="cart.html" class="cart">
+                <ion-icon
+                  name="cart-outline"
+                  style="font-size: 23px"></ion-icon>
+                <span class="cart-count">0</span>
+                <p>Cart</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-box">
+          <div class="success-icon">✔</div>
+          <div class="success-text">
+            <h2>Thank you for placing an order on Samie Records!</h2>
+            <p id="order-number">Order Nº ...</p>
+          </div>
+
+          <a href="index.html" id="download-link-anchor">
+            <button class="details-btn">SEE DOWNLOAD</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col-logo-col">
+          <img
+            src="logo/Samie Records Logo - icon.png"
+            width="60px"
+            alt="logo"
+            class="footer-logo" />
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Join Affiliate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <div class="contact-item">
+            <div><ion-icon name="mail"></ion-icon></div>
+            <div>musicproductionshare@gmail.com</div>
+          </div>
+
+          <div class="contact-item">
+            <div><ion-icon name="call"></ion-icon></div>
+            <div>+234 08102839713</div>
+          </div>
+
+          <!-- <div class="contact-item">
+            <div><ion-icon name="location"></ion-icon></div>
+            <div>Office 2-4 Custom Street Lagos, Nigeria</div>
+          </div> -->
+        </div>
+
+        <div class="footer-col right-align">
+          <div class="stay">
+            <h4>Stay in touch</h4>
+            <div class="social-icons">
+              <a
+                href="https://www.linkedin.com/in/kolawole-adewalure-2a0723334/"
+                target="_blank"
+                class="icon">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+
+              <a
+                href="https://www.youtube.com/@samierecords?sub_confirmation=1"
+                target="_blank"
+                class="icon">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+
+              <!-- <a
+                href="https://www.youtube.com/@samierecords?sub_confirmation=1"
+                target="_blank"
+                class="icon">
+                <ion-icon name="logo-xing"></ion-icon>
+              </a> -->
+
+              <a
+                href="https://www.instagram.com/samierecords/"
+                target="_blank"
+                class="icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="copy-term">
+        <p class="copyright">©2026 Samie Records</p>
+        <div class="legal-links">
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/cart.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. GENERATE ORDER NUMBER
+        const orderNumberElement = document.getElementById("order-number");
+        const customID =
+          "Samie Records-" +
+          Math.random().toString(36).substring(2, 9).toUpperCase();
+        if (orderNumberElement)
+          orderNumberElement.innerText = "Order Nº " + customID;
+
+        // 2. PRODUCT DATABASE
+        const myProducts = [
+          {
+            name: "Afro Essentials - Guitar Loop Packs",
+            downloadUrl:
+              "https://drive.google.com/drive/folders/1_5cGQJ-40fuigSrao_JRNFP7GwYEzW0g?usp=sharing",
+          },
+          {
+            name: "Afro Essentials - Drum Loops",
+            downloadUrl:
+              "https://drive.google.com/drive/folders/YOUR_FOLDER_ID_2",
+          },
+          {
+            name: "AfroBeats Packs - Ultimate Bundle Vol 1",
+            downloadUrl:
+              "https://drive.google.com/file/d/YOUR_FILE_ID_3/view?usp=sharing",
+          },
+          {
+            name: "Vocals Bundle",
+            downloadUrl:
+              "https://drive.google.com/file/d/1tKSD_VpDOfg-dIB0J4w5zGEarqDFouYe/view?usp=sharing",
+          },
+          {
+            name: "Sample Packs",
+            downloadUrl:
+              "https://drive.google.com/file/d/19xCLToykmby2lTjgkSR9CnKJjBqVy7qR/view?usp=sharing",
+          },
+        ];
+
+        // 3. DOWNLOAD LOGIC
+        const parentAnchor = document.getElementById("download-link-anchor");
+        const seeDownloadBtn = document.querySelector(".details-btn");
+
+        const rawCart =
+          localStorage.getItem("last_purchase") ||
+          localStorage.getItem("jlk_cart");
+        const cart = JSON.parse(rawCart) || [];
+
+        // Check if cart has items
+        if (cart.length > 0 && parentAnchor) {
+          const lastItem = cart[cart.length - 1];
+          const purchasedName = lastItem.name.toLowerCase().trim();
+
+          const match = myProducts.find((p) => {
+            const dbName = p.name.toLowerCase().trim();
+            return (
+              dbName === purchasedName ||
+              dbName.includes(purchasedName) ||
+              purchasedName.includes(dbName)
+            );
+          });
+
+          if (match && match.downloadUrl) {
+            // SUCCESS CASE: Item found in database
+            parentAnchor.href = match.downloadUrl;
+            parentAnchor.setAttribute("target", "_blank");
+            seeDownloadBtn.innerText = "DOWNLOAD NOW";
+            seeDownloadBtn.style.backgroundColor = "#28a745";
+          } else {
+            // SEMI-FAILURE: Item in cart but link missing in database
+            parentAnchor.href = "index.html";
+            seeDownloadBtn.innerText = "BACK TO SHOPPING";
+            seeDownloadBtn.style.backgroundColor = "#666"; // Grey for neutral
+          }
+        } else {
+          // FAILURE CASE: No cart found at all (cart is empty)
+          if (parentAnchor) {
+            parentAnchor.href = "index.html";
+            seeDownloadBtn.innerText = "BACK TO SHOPPING";
+            seeDownloadBtn.style.backgroundColor = "#000"; // Black or your brand color
+          }
+        }
+
+        // 4. CLEANUP (Wait 30 seconds, then clear everything)
+        setTimeout(() => {
+          localStorage.removeItem("jlk_cart");
+          localStorage.removeItem("last_purchase");
+          const cartCount = document.querySelector(".cart-count");
+          if (cartCount) cartCount.innerText = "0";
+        }, 30000);
+      });
+    </script>
+    <script src="js/search.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

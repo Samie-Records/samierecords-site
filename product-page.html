@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/product-page.css" />
+    <link rel="stylesheet" href="css/search-results.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="min-container-navbar">
+      <div class="navbar">
+        <!-- Logo -->
+        <a href="index.html">
+          <img
+            class="logo-icon"
+            src="logo/Samie Logo-color.png"
+            width="200px" />
+        </a>
+
+        <!-- Search -->
+        <div class="search-box">
+          <input
+            id="mainSearchInput"
+            type="text"
+            placeholder="Search for loops, kits, vocal chops, or full beats..."
+            autocomplete="off" />
+          <div id="searchSuggestions" class="suggestions-dropdown"></div>
+        </div>
+        <ion-icon
+          id="searchIconBtn"
+          class="search-icon"
+          name="search-outline"
+          style="cursor: pointer"></ion-icon>
+
+        <!-- Account -->
+        <!-- <div class="drop-menu" id="accountToggle">
+            <ion-icon name="person-outline"></ion-icon>
+            <p id="accountName">Account</p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </div>
+
+          <div class="account-dropdown hidden" id="accountDropdown"></div> -->
+
+        <!-- Right side -->
+        <div class="nav-right">
+          <!-- Cart -->
+          <a href="cart.html" class="cart">
+            <ion-icon name="cart-outline" style="font-size: 23px"></ion-icon>
+            <span class="cart-count">0</span>
+            <p>Cart</p>
+          </a>
+
+          <!-- Login Modal -->
+          <!-- <div id="loginModal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeLogin()">&times;</span>
+
+                <h2>Please Your Details</h2>
+                <p class="subtitle">Click continue to Sign in or Sign up!</p>
+
+                 <div class="divider">
+                  <span>only</span>
+                </div>
+
+                <label>Email address</label>
+                <input
+                  type="email"
+                  id="emailInput"
+                  placeholder="Enter your email address" />
+
+                 <button onclick="Clerk.openSignIn()" class="continue-btn">
+                  Continue ▶
+                </button> 
+              </div>
+            </div> -->
+        </div>
+
+        <!-- Mobile menu icon -->
+        <!-- <img
+              src="images/menu.png"
+              class="menu-icon"
+              onclick="menutoggle()" />
+          </div> -->
+      </div>
+    </div>
+
+    <!-- MAIN PRODUCT SECTION -->
+    <section class="product-container">
+      <!-- LEFT SIDE -->
+      <div class="product-left">
+        <div class="product-image-box">
+          <img src="#" alt="#" class="main-image" id="main-product-img" />
+
+          <div>
+            <h1 class="product-title" id="main-product-title">
+              <!-- Oraimo Watch 5 Lite 2.01" HD IP68 Smart Watch -->
+            </h1>
+            <div class="price">
+              ₦<span id="product-price">0</span>
+              <!-- <p>₦ 26,820</p> -->
+              <!-- <span class="discount">-34%</span> -->
+            </div>
+            <div class="stock">In stock</div>
+
+            <button id="addToCartBtn" class="add-to-cart add-cart-btn">
+              <i class="fa-solid fa-cart-shopping"></i> Add to cart
+            </button>
+
+            <hr />
+
+            <div class="promotions">
+              <div class="promotions-title">PROMOTIONS</div>
+              <a href="#"><p>Call 08102839713 To Place Your Order</p></a>
+
+              <hr class="delivery-return-hr" />
+              <h3>The Secret Sauce for Professional Afrobeat</h3>
+              <hr class="delivery-return-hr" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="product-right">
+        <h4>What’s Inside?</h4>
+        <hr class="delivery-return-hr" />
+
+        <!-- <p>
+          <ion-icon name="checkmark-circle"></ion-icon> Authenticity First:
+          Every loop is recorded or programmed with a deep understanding of
+          Afrobeat syncopation and swing.
+        </p> -->
+        <p>
+          <ion-icon name="checkmark-circle"></ion-icon> Instant Inspiration:
+          Drag-and-drop ready. No more staring at a blank DAW screen—just
+          instant vibes.
+        </p>
+        <p>
+          <ion-icon name="checkmark-circle"></ion-icon> Professional Processing:
+          Mixed and mastered by industry experts. These sounds are crisp,
+          punchy, and ready to cut through any mix.
+        </p>
+        <p>
+          <ion-icon name="checkmark-circle"></ion-icon> 100% Royalty-Free: Use
+          these sounds in your commercial releases without ever worrying about
+          clearing samples or paying extra fees.
+        </p>
+        <hr class="delivery-return-hr" />
+
+        <h4>Technical Specifications?</h4>
+        <hr class="delivery-return-hr" />
+
+        <p>High-Quality WAV (24-bit / 44.100 kHz)</p>
+      </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Product added successful ✅</div>
+
+    <div class="continue-shop">
+      <a href="index.html">← Go back & continue shopping</a>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Clerk + Helper Scripts -->
+    <!-- <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c21hc2hpbmctaGFsaWJ1dC04LmNsZXJrLmFjY291bnRzLmRldiQ"
+      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"></script> -->
+    <script src="js/dropdown.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
+    <script src="js/product-page.js"></script>
+    <script src="js/search.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="js/audio-preview.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recently Viewed</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/product-page.css" />
+    <link rel="stylesheet" href="css/recently-viewed.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="min-container-navbar">
+      <div class="navbar">
+        <!-- Logo -->
+        <a href="index.html">
+          <img
+            class="logo-icon"
+            src="logo/JLK-LOGO.png"
+            alt="JLK Logo"
+            width="45px" />
+        </a>
+
+        <!-- Search -->
+        <div class="search-box">
+          <input
+            id="mainSearchInput"
+            type="text"
+            placeholder="Search for loops, kits, or vocal chops..."
+            autocomplete="off" />
+          <div id="searchSuggestions" class="suggestions-dropdown"></div>
+        </div>
+        <ion-icon
+          id="searchIconBtn"
+          class="search-icon"
+          name="search-outline"
+          style="cursor: pointer"></ion-icon>
+
+        <!-- Account -->
+        <div class="drop-menu" id="accountToggle">
+          <ion-icon name="person-outline"></ion-icon>
+          <p id="accountName">Account</p>
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </div>
+        <div class="account-dropdown hidden" id="accountDropdown"></div>
+
+        <!-- Right side -->
+        <div class="nav-right">
+          <!-- Cart -->
+          <a href="cart.html" class="cart">
+            <ion-icon name="cart-outline" style="font-size: 23px"></ion-icon>
+            <span class="cart-count">0</span>
+            <p>Cart</p>
+          </a>
+
+          <!-- Login Modal -->
+          <div id="loginModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeLogin()">&times;</span>
+              <h2>Please Your Details</h2>
+              <p class="subtitle">Sign in to continue!</p>
+              <div class="divider"><span>only</span></div>
+              <label>Email address</label>
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="Enter your email address" />
+              <button onclick="Clerk.openSignIn()" class="continue-btn">
+                Continue ▶
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile menu icon -->
+        <img
+          src="images/menu.png"
+          class="menu-icon"
+          alt="Menu Icon"
+          onclick="menutoggle()" />
+      </div>
+    </div>
+
+    <!-- Recently Viewed -->
+    <div class="recent-container">
+      <section class="recent">
+        <h2 class="recent-title">Recently Viewed</h2>
+        <div class="recent-grid">
+          <div
+            class="recent-item"
+            onclick="addRecentToCart('rec1','Wireless Mouse',15000,'images/mouse.jpg')">
+            <img src="images/mouse.jpg" alt="Wireless Mouse" width="80" />
+            <p>Wireless Mouse</p>
+            <span>₦ 15,000</span>
+          </div>
+
+          <div
+            class="recent-item"
+            onclick="addRecentToCart('rec2','USB Keyboard',22000,'images/keyboard.jpg')">
+            <img src="images/keyboard.jpg" alt="USB Keyboard" width="80" />
+            <p>USB Keyboard</p>
+            <span>₦ 22,000</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/cart-page.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/modal.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Clerk Script -->
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c21hc2hpbmctaGFsaWJ1dC04LmNsZXJrLmFjY291bnRzLmRldiQ"
+      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"></script>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Product added successful ✅</div>
+    <script src="js/search.js"></script>
+  </body>
+</html>

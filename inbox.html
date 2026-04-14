@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/header.css" />
+    <title>Inbox Messages</title>
+
+    <link rel="stylesheet" href="orders-page/css/main.css" />
+    <link rel="stylesheet" href="orders-page/css/sidebar.css" />
+    <link rel="stylesheet" href="orders-page/css/inbox.css" />
+  </head>
+
+  <body>
+    <!-- navebar -->
+    <div class="min-container-navbar">
+      <div class="navbar">
+        <!-- Logo -->
+        <a href="index.html">
+          <img class="logo-icon" src="logo/JLK-LOGO.png" width="45px" />
+        </a>
+
+        <!-- Search -->
+        <div class="search-box">
+          <input
+            id="mainSearchInput"
+            type="text"
+            placeholder="Search for loops, kits, or vocal chops..."
+            autocomplete="off" />
+          <div id="searchSuggestions" class="suggestions-dropdown"></div>
+        </div>
+        <ion-icon
+          id="searchIconBtn"
+          class="search-icon"
+          name="search-outline"
+          style="cursor: pointer"></ion-icon>
+
+        <!-- Account -->
+        <div class="drop-menu" id="accountToggle">
+          <ion-icon name="person-outline"></ion-icon>
+          <p id="accountName">Account</p>
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </div>
+
+        <div class="account-dropdown hidden" id="accountDropdown"></div>
+
+        <!-- Right side -->
+        <div class="nav-right">
+          <!-- Cart -->
+          <a href="cart.html" class="cart">
+            <ion-icon name="cart-outline" style="font-size: 23px"></ion-icon>
+            <span class="cart-count">0</span>
+            <p>Cart</p>
+          </a>
+
+          <!-- Login Modal -->
+          <div id="loginModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeLogin()">&times;</span>
+
+              <h2>Please Your Details</h2>
+              <p class="subtitle">Sign in to continue!</p>
+
+              <div class="divider">
+                <span>only</span>
+              </div>
+
+              <label>Email address</label>
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="Enter your email address" />
+
+              <button onclick="Clerk.openSignIn()" class="continue-btn">
+                Continue ▶
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile menu icon -->
+        <!-- <img
+              src="images/menu.png"
+              class="menu-icon"
+              onclick="menutoggle()" />
+          </div> -->
+      </div>
+    </div>
+
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <ul>
+          <li data-page="account.html">
+            <a href="account.html">
+              <ion-icon name="person-outline"></ion-icon> My Account
+            </a>
+          </li>
+
+          <hr class="hr-top" />
+
+          <li data-page="orders.html">
+            <a href="orders.html">
+              <ion-icon name="card-outline"></ion-icon> Orders
+            </a>
+          </li>
+
+          <li data-page="inbox.html">
+            <a href="inbox.html">
+              <ion-icon name="mail-unread-outline"></ion-icon> Inbox
+            </a>
+          </li>
+
+          <li data-page="pending-review.html">
+            <a href="pending-review.html">
+              <ion-icon name="reader-outline"></ion-icon> Pending Reviews
+            </a>
+          </li>
+
+          <li data-page="voucher.html">
+            <a href="voucher.html">
+              <ion-icon name="bonfire-outline"></ion-icon> Voucher
+            </a>
+          </li>
+
+          <li data-page="wishlist.html">
+            <a href="wishlist.html">
+              <ion-icon name="heart-outline"></ion-icon> Wishlist
+            </a>
+          </li>
+
+          <li data-page="followed-sellers.html">
+            <a href="followed-sellers.html">
+              <ion-icon name="bicycle-outline"></ion-icon> Followed Sellers
+            </a>
+          </li>
+
+          <li data-page="recently-viewed.html">
+            <a href="recently-viewed.html">
+              <ion-icon name="shield-checkmark-outline"></ion-icon> Recently
+              Viewed
+            </a>
+          </li>
+        </ul>
+
+        <hr />
+
+        <div class="account-management">
+          <p>Account Management</p>
+          <a href="#">Payment Settings</a>
+          <a href="#">Address Book</a>
+          <a href="#">Newsletter Preferences</a>
+          <hr />
+          <a href="#" id="logoutBtn" class="logout">Logout</a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <h1>Inbox Messages</h1>
+
+        <div class="messages">
+          <!-- Message Card -->
+          <div class="message-card">
+            <div class="message-header">
+              <span class="time">1 day ago</span>
+              <a href="#" class="details">See Details</a>
+            </div>
+
+            <h3>Package delivered!</h3>
+            <p>
+              Package DS-HAC-1655731832-8925 is delivered. You can rate your
+              product to let other people know about it. Not happy? You can
+              return it within 7 days from now!
+            </p>
+
+            <div class="product-preview">
+              <img src="assets/images/product-8.jpg" alt="" />
+              <span>
+                Smart Watch Fit 020 BT Call/notification, Ai Powered, 2straps
+                Colour Black
+              </span>
+            </div>
+          </div>
+
+          <!-- Message Card -->
+          <div class="message-card">
+            <div class="message-header">
+              <span class="time">1 day ago</span>
+              <a href="#" class="details">See Details</a>
+            </div>
+
+            <h3>Arriving Today!</h3>
+            <p>
+              Johnson (tel. 07040373230) will deliver your package today. Please
+              inspect your package before confirming payment.
+            </p>
+
+            <div class="product-preview">
+              <img src="assets/images/product-8.jpg" alt="" />
+              <span>
+                Smart Watch Fit 020 BT Call/notification, Ai Powered, 2straps
+                Colour Black
+              </span>
+            </div>
+          </div>
+
+          <!-- Message Card -->
+          <div class="message-card">
+            <div class="message-header">
+              <span class="time">5 days ago</span>
+              <a href="#" class="details">See Details</a>
+            </div>
+
+            <h3>Shipped</h3>
+            <p>Your order has been shipped and is on its way to you.</p>
+
+            <div class="product-preview">
+              <img src="assets/images/product-8.jpg" alt="" />
+              <span>
+                Smart Watch Fit 020 BT Call/notification, Ai Powered, 2straps
+                Colour Black
+              </span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- script here -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Clerk (ONLY ONCE) -->
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c21hc2hpbmctaGFsaWJ1dC04LmNsZXJrLmFjY291bnRzLmRldiQ"
+      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"></script>
+
+    <!-- Your JS Files -->
+    <script src="js/dropdown.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/pages/index.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="orders-page/js/account.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>

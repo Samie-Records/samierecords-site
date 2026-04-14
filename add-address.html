@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Address</title>
+    <link rel="stylesheet" href="css/add-address.css" />
+    <link rel="stylesheet" href="css/place-order.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <div class="logo">
+          <img src="logo/Samie Logo-color.png" width="130px" />
+        </div>
+      </a>
+      <h1>Add New Address</h1>
+      <nav>
+        <div class="call-outline">
+          <ion-icon name="call"></ion-icon>
+          <div>
+            <p>Need Help?</p>
+            <a href="#"><p class="contact-us">Contact us</p></a>
+          </div>
+        </div>
+        <div class="call-outline">
+          <ion-icon name="checkmark-circle"></ion-icon>
+          <div>
+            <p>Easy</p>
+            <p>Returns</p>
+          </div>
+        </div>
+        <div class="call-outline">
+          <ion-icon name="construct"></ion-icon>
+          <div>
+            <p>Secure</p>
+            <p>Payments</p>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="checkout-container">
+      <section class="checkout-left">
+        <div class="step active">
+          <h3>1. CUSTOMER ADDRESS</h3>
+
+          <form class="address-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="firstName" value="Kolawole" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="lastName" value="Adewalure" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group prefix-group">
+                <label>Email</label>
+                <div class="email-input">
+                  <input
+                    type="email"
+                    id="emailAddress"
+                    placeholder="Enter your email"
+                    required />
+                </div>
+              </div>
+            </div>
+
+            <div class="step-actions">
+              <a href="place-order.html" class="cancel">Cancel</a>
+              <button type="submit" class="primary">Save</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="step disabled"><h3>2. DELIVERY DETAILS</h3></div>
+        <div class="step disabled"><h3>3. PAYMENT METHOD</h3></div>
+      </section>
+
+      <aside class="checkout-right">
+        <h3>Order summary</h3>
+        <hr />
+        <div class="summary-row">
+          <span>Item's total (0)</span>
+          <strong id="subtotal-display">₦ 0</strong>
+        </div>
+        <hr />
+        <div class="summary-row total">
+          <span>Total</span>
+          <strong id="total-display">₦ 0</strong>
+        </div>
+        <hr />
+        <p class="voucher-info">
+          You will be able to add a voucher when selecting your payment method.
+        </p>
+        <hr />
+        <button class="confirm disabled">Confirm order</button>
+        <p class="terms">
+          By proceeding, you are automatically accepting the
+          <a href="#">Terms & Conditions</a>
+        </p>
+      </aside>
+    </main>
+
+    <footer>
+      <a href="index.html">← Go back & continue shopping</a>
+    </footer>
+
+    <script>
+      const addressForm = document.querySelector(".address-form");
+
+      // Handle Form Submission (Save Button)
+      addressForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const email = document.getElementById("emailAddress").value;
+
+        // Create the object for place-order.html
+        const customerInfo = {
+          fullName: `${firstName} ${lastName}`,
+          fullAddress: "Default Address Section", // You can add a street input back later if needed
+          displayLine2: `| Shipping Area | ${email}`,
+        };
+
+        // Save to LocalStorage
+        localStorage.setItem("customerAddress", JSON.stringify(customerInfo));
+        localStorage.setItem("userName", customerInfo.fullName);
+
+        // Redirect back to checkout
+        window.location.href = "place-order.html";
+      });
+
+      // Update Order Summary
+      function updateSummary() {
+        const cart = JSON.parse(localStorage.getItem("jlk_cart")) || [];
+        const subtotal = cart.reduce(
+          (acc, item) =>
+            acc + Number(item.price) * (Number(item.quantity) || 1),
+          0
+        );
+
+        document.getElementById(
+          "subtotal-display"
+        ).innerText = `₦ ${subtotal.toLocaleString()}`;
+        document.getElementById(
+          "total-display"
+        ).innerText = `₦ ${subtotal.toLocaleString()}`;
+        document.querySelector(
+          ".summary-row span"
+        ).innerText = `Item's total (${cart.length})`;
+      }
+
+      updateSummary();
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: o;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+.recent-container {
+  margin-top: 100px;
+}

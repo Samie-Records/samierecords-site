@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+/* .dashboard {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+} */
+
+.dashboard {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+/* Content should shrink properly */
+.content {
+  width: 100%;
+}
