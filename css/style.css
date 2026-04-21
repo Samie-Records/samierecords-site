@@ -1398,3 +1398,7 @@ hr {
     display: none !important;
   }
 }
+
+section {
+  background: white;
+}
